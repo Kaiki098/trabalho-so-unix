@@ -11,8 +11,8 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="./script/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="./styles/style.css" />
-	<link rel="stylesheet" href="trabalho-so-unix/styles/xterm.css" />
-	<script src="https://unpkg.com/xterm/lib/xterm.js"></script>
+	<link rel="stylesheet" type="text/css" href="./styles/terminal.css" />
+    <script src="https://unpkg.com/xterm/lib/xterm.js"></script>
 	<title>Windows Template</title>
 </head>
 
@@ -36,14 +36,15 @@
 					HTML5-Templates.com</strong></p>
 		</div>
 		<div class="window" data-title="Terminal">
-			<div id="Terminal">
-				<script>
-					const term = new Terminal();
-					const terminalContainer = document.getElementById('terminal');
-					term.open(terminalContainer);
-					term.write('Welcome to Xterm.js Demo\n');
-				</script>
+			<div class="terminalCont">
+				<div id="terminalReslutsCont">
+				</div>
+				<form>
+				<input id="terminalTextInput" type="text" placeholder="Try typing hi or help..." autocomplete="off">
+				</form>
 			</div>
+			<script src="./script/terminal.js"></script>
+
 		</div>
 
 		<div id="taskbar">
