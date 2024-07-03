@@ -10,6 +10,8 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="./script/script.js"></script>	
 	<link rel="stylesheet" type="text/css" href="./styles/style.css" />
+	<link rel="stylesheet" href="trabalho-so-unix/styles/xterm.css" />
+    <script src="https://unpkg.com/xterm/lib/xterm.js"></script>
 	<title>Windows Template</title>
 </head>
 <body>
@@ -29,6 +31,16 @@
 			<p>Drag the title bar to move the windows or resize them from the bottom right corner.</p>
 			<hr />
 			<p><strong>You can download and edit this template freely as long as you leave a visible link to HTML5-Templates.com</strong></p>
+		</div>
+		<div class="window" data-title="Terminal">
+			<div  id="Terminal">
+				<script>
+					const term = new Terminal();
+					const terminalContainer = document.getElementById('terminal');
+					term.open(terminalContainer);
+					term.write('Welcome to Xterm.js Demo\n');
+				</script>
+			</div>
 		</div>
 		
 		<div id="taskbar">		
@@ -50,7 +62,8 @@
 			<a class="openWindow" data-id="3">
 				<img class="icons__image" src="./assets/txt.webp" alt="text app icon">
 			</a>
-			<span>História</span>
+      <span>História</span>
+			<a class="openWindow" data-id="4">Terminal</a>
 		</div>
 		<a href="https://html5-templates.com/" rel="nofollow" target="_blank" id="templateLink">&copy; HTML5-Templates.com</a>	
 		<!-- You can use this template freely if you leave a visible link to HTML5-Templates.com -->
