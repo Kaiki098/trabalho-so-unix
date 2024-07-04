@@ -32,7 +32,7 @@ html {
       font-weight: 300;
       font-size: 48px;
       margin: 60px 0 0 0;
-      color: white;
+      color: rgb(81, 255, 0);
     opacity: 0;
    
     animation: fadeInAnimation 1s ease-in-out 0s forwards;
@@ -42,7 +42,7 @@ html {
       text-align: center;
       font-weight: 400;
       font-size: 18px;
-      color: rgba(255,255,255,0.75);
+      color: rgb(94, 255, 0);
     margin: 0 0 60px 0;
     opacity: 0;
   }
@@ -50,7 +50,6 @@ html {
   .terminalCont{
       background: black;
       width: 100%;
-      border-radius: 4px;
     padding:12px 0 0 0;
     margin-top: -20px;
     font-family: 'Roboto Mono', monospace;
@@ -62,7 +61,7 @@ html {
   }
    
   .userEnteredText{
-    color: rgba(255,255,255,0.5);
+    color: rgb(72, 255, 0);
     margin: 0;
     padding: 0;
     display: inline-block;
@@ -78,12 +77,12 @@ html {
       font-size: 14px;
     line-height: 28px;
       display: block;
-      color: rgba(255,255,255,0.9);
+      color: rgb(102, 255, 0);
   }
    
    
   #terminalReslutsCont a{
-    color: rgba(255,255,255,0.9);
+    color: rgb(72, 255, 0);
     text-decoration: none;
   }
    
@@ -95,10 +94,9 @@ html {
       background: black;
       display: block;
       border: none;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      border-radius: 0 0 4px 4px;
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
       width: 100%;
-      color: white;
+      color: rgb(43, 255, 0);
       padding: 18px;
       font-size: 14px;
     outline: none;
