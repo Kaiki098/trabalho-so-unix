@@ -316,6 +316,10 @@ select {
     max-width: 300px;
 }
 
+.window[data-title="Declínio"] .wincontent__img-container:last-child img {
+    max-width: 200px;
+}
+
 .content-container {
     height: -webkit-fill-available;
     overflow-y: scroll;
