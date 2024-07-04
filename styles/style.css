@@ -185,12 +185,16 @@ select {
     position: fixed;
     height: 100%;
     width: 100%;
-    background: #008c8c;
     overflow: hidden;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    background: #008c8c;
+    background-image: url("../assets/unix.png");
+    background-repeat: no-repeat;
+    background-size: 720px;
+    background-position: center center;
 }
 
 .window {
@@ -297,26 +301,42 @@ select {
     min-width: 200px;
     min-height: 140px;
     margin: 2px;
-    overflow-y: scroll;
-    overflow-x: hidden;
     border-radius: 0 0 5px 5px;
 }
 
-.wincontent::-webkit-scrollbar {
-    width: 10px; /* Largura da barra de rolagem */
+.wincontent__img-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+    flex-wrap: wrap;
 }
 
-.wincontent::-webkit-scrollbar-track {
-    background: #787878; /* Cor de fundo da trilha da barra de rolagem */
+.wincontent__img-container img {
+    width: -webkit-fill-available;
+    max-width: 300px;
 }
 
-.wincontent::-webkit-scrollbar-thumb {
-    background: #585858; /* Cor da barra de rolagem */
+.content-container {
+    height: -webkit-fill-available;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.content-container::-webkit-scrollbar {
+    width: 10px; 
+}
+
+.content-container::-webkit-scrollbar-track {
+    background: #787878; 
+}
+
+.content-container::-webkit-scrollbar-thumb {
+    background: #585858; 
     border: 2px solid black;
 }
 
-.wincontent::-webkit-scrollbar-thumb:hover {
-    background: #929292; /* Cor da barra de rolagem ao passar o mouse */
+.content-container::-webkit-scrollbar-thumb:hover {
+    background: #929292;
 }
 
 .windowHeader>strong {
@@ -391,8 +411,7 @@ select {
 }
 
 #icons a:hover {
-    background: #d8d8d8;
-    color: #FFF;
+    background: #00b8b8;
 }
 
 #icons span {
@@ -447,6 +466,11 @@ select {
 }
 
 #window3 .wincontent {
+    width: 400px;
+    height: 350px;
+}
+
+#window4 .wincontent {
     width: 400px;
     height: 350px;
 }

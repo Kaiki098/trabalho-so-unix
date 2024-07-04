@@ -94,10 +94,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		// replies
 		case "ls":
 		  clearInput();
-		  addTextToResults("Historia-1");
-		  addTextToResults("Historia-2");
-		  addTextToResults("HIstoria-3");
-		  addTextToResults("HIstoria-4");
+		  addTextToResults("Surgimento");
+		  addTextToResults("Evolucao");
+		  addTextToResults("Declinio");
+		  addTextToResults("Referencia");
 		  addTextToResults("Terminal");
 		  addTextToResults("Lixeira");
 		  break;
@@ -193,8 +193,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		case "authors":
 		  clearInput();
-		  addTextToResults("Kaiki Alvarenga");
-		  addTextToResults("Helen Enes Dessa");
+		  addTextToResults("Kaiki Alvarenga de Souza");
+		  addTextToResults("Helen Enes da Silva Dessa");
 		  addTextToResults("Maria Clara Batista");
 		  break;
    

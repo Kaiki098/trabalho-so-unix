@@ -12,97 +12,118 @@
 	<script src="./script/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="./styles/style.css" />
 	<link rel="stylesheet" type="text/css" href="./styles/terminal.css" />
-    <script src="https://unpkg.com/xterm/lib/xterm.js"></script>
+	<script src="https://unpkg.com/xterm/lib/xterm.js"></script>
 	<title>Windows Template</title>
 </head>
 
 <body>
 	<div id="desktop">
 		<div class="window closed" data-title="Surgimento">
-			<h1>CONDIÇÕES DE SURGIMENTO</h1>
-
-			<h5>   Em meados dos anos 40, computadores não armazenavam instruções na memória,
-				elas eram executadas a partir de cartões perfurados, painéis de comutação
-				ou instruções fixadas pela organização de cabos e interruptores. Com a proposta 
-				de arquitetura de von Neumann na metade da década, novas perspectivas de programação
-				foram surgindo, permitindo conceitos como o de programa armazenado e a capacidade
-				do computador executar instruções de software armazenadas na memória de acesso aleatório 
-				(RAM, do inglês random access memory).</h5>
-			<h5>	Com a popularização dos computadores de programa armazenado, o Massachusetts Institute
-				of Technology (MIT), a American Telephone and Telegraph (AT&T) Bell Labs e General
-				Eletric (GE) se reuniram para desenvolver um sistema operacional experimental, o MULTiplexed 
-				Information and Computing Services (MULTICS), para rodar em na máquina GE 645. Ele acabou não 
-				atraindo muitos consumidores, pela falta de recursos computacionais para atender ao que o 
-				software se propunha a fazer. 
-			</h5>
-
+			<div class="content-container">
+				<h1>CONDIÇÕES DE SURGIMENTO</h1>
+				<h5> Em meados dos anos 40, computadores não armazenavam instruções na memória,
+					elas eram executadas a partir de cartões perfurados, painéis de comutação
+					ou instruções fixadas pela organização de cabos e interruptores. Com a proposta
+					de arquitetura de von Neumann na metade da década, novas perspectivas de programação
+					foram surgindo, permitindo conceitos como o de programa armazenado e a capacidade
+					do computador executar instruções de software armazenadas na memória de acesso aleatório
+					(RAM, do inglês random access memory).</h5>
+				<h5> Com a popularização dos computadores de programa armazenado, o Massachusetts Institute
+					of Technology (MIT), a American Telephone and Telegraph (AT&T) Bell Labs e General
+					Eletric (GE) se reuniram para desenvolver um sistema operacional experimental, o MULTiplexed
+					Information and Computing Services (MULTICS), para rodar em na máquina GE 645. Ele acabou não
+					atraindo muitos consumidores, pela falta de recursos computacionais para atender ao que o
+					software se propunha a fazer.
+				</h5>
+				<div class="wincontent__img-container">
+					<img src="./assets/multics.png">
+				</div>
+			</div>
 		</div>
 		<div class="window closed" data-title="Evolução">
-			<h1>SURGIMENTO E EVOLUÇÃO</h1>
+			<div class="content-container">
+				<h1>SURGIMENTO E EVOLUÇÃO</h1>
 
-			<h5>   Um novo projeto de sistema operacional foi elaborado por Thompson, Ritchie, 
-				McIlroy e Ossanna, o unics, escrito em asm e que visava oferecer ao usuário uma 
-				interface de linha de comando. Em 1969, o unics virou UNIX, mudança que marcou 
-				um período de grande colaboração entre Thompson e Ritchie, sendo o início do seu 
-				desenvolvimento para o PDP-7.
-			</h5>
-			<h5>	Com a popularização dos computadores de programa armazenado, o Massachusetts Institute
-				of Technology (MIT), a American Telephone and Telegraph (AT&T) Bell Labs e General
-				Eletric (GE) se reuniram para desenvolver um sistema operacional experimental, o MULTiplexed 
-				Information and Computing Services (MULTICS), para rodar em na máquina GE 645. Ele acabou não 
-				atraindo muitos consumidores, pela falta de recursos computacionais para atender ao que o 
-				software se propunha a fazer. </h5>
-			<h5>	A distribuição gratuita do UNIX começou nas universidades em 1975, 
-				junto à criação de ferramentas para o rápido desenvolvimento de softwares 
-				por terceiros. Apenas três anos depois, em 1978, começou a ser distribuído 
-				o UNIX System V, uma versão comercial, com suporte técnico e manutenção.
-			</h5>
+				<h5> Um novo projeto de sistema operacional foi elaborado por Thompson, Ritchie,
+					McIlroy e Ossanna, o unics, escrito em asm e que visava oferecer ao usuário uma
+					interface de linha de comando. Em 1969, o unics virou UNIX, mudança que marcou
+					um período de grande colaboração entre Thompson e Ritchie, sendo o início do seu
+					desenvolvimento para o PDP-7.
+				</h5>
+				<h5> Com a popularização dos computadores de programa armazenado, o Massachusetts Institute
+					of Technology (MIT), a American Telephone and Telegraph (AT&T) Bell Labs e General
+					Eletric (GE) se reuniram para desenvolver um sistema operacional experimental, o MULTiplexed
+					Information and Computing Services (MULTICS), para rodar em na máquina GE 645. Ele acabou não
+					atraindo muitos consumidores, pela falta de recursos computacionais para atender ao que o
+					software se propunha a fazer. </h5>
+				<h5> A distribuição gratuita do UNIX começou nas universidades em 1975,
+					junto à criação de ferramentas para o rápido desenvolvimento de softwares
+					por terceiros. Apenas três anos depois, em 1978, começou a ser distribuído
+					o UNIX System V, uma versão comercial, com suporte técnico e manutenção.
+				</h5>
+				<div class="wincontent__img-container">
+					<img src="./assets/unix.png" alt="">
+					<img src="./assets/Unix_System_Laboratories_logo.svg.png" alt="">
+				</div>
+			</div>
 		</div>
-		
-		<div class="window closed" data-title="Declínio">
-			<h1>DECLÍNIO</h1>
 
-			<h5>   A partir dos anos 80, outros projetos envolvendo o UNIX começaram a ser lançados, 
-				em paralelo ao original e ao System V. Já no início da década, a Universidade da 
-				Califórnia lançou o Berkeley Software Distribution (BSD), com a inclusão dos protocolos 
-				TCP/IP. A Microsoft também entrou no mercado com a sua versão, o Xenix, assim como a Apple, 
-				com a A/UX e o macOS. Também foi lançado, em 1984, o X window system, um sistema de janelas, 
-				que juntamente ao gerenciador de janelas Tab Window Manager (twm), proporcionou uma melhor 
-				experiência gráfica ao usuário UNIX e outros sistemas operacionais baseados nele.
-			</h5>
-			<h5>	O que pode parecer um sucesso levou ao seu declínio nos anos 90, 
-				junto a outros fatores. O aumento da quantidade de sistemas UNIX-like 
-				levou à fragmentação do UNIX original e uma falta de padronização. As 
-				melhorias do BSD e o surgimento do Linux tornaram o projeto original 
-				uma opção menos atrativa, além da ascensão de sistemas proprietários, 
-				que dominaram o mercado de software. Esses novos SOs também contavam 
-				com suporte para as novas arquiteturas do mercado, como a x86, ao contrário 
-				do UNIX, que não conseguiu acompanhar a velocidade das mudanças do hardware.
-			</h5>
-			<h5>	Não se pode negar, porém, a sua contribuição para os sistemas operacionais 
-				modernos: trouxe o conceito de shell, não apenas como linha de comando, mas 
-				como uma linguagem própria; criou a separação entre o espaço do usuário e do 
-				kernel, os sistemas e gerenciamento de arquivos; conceitos de ciclo de processos, 
-				além do versionamento e documentação.
-			</h5>
+		<div class="window closed" data-title="Declínio">
+			<div class="content-container">
+
+				<h1>DECLÍNIO</h1>
+				<h5> A partir dos anos 80, outros projetos envolvendo o UNIX começaram a ser lançados,
+					em paralelo ao original e ao System V. Já no início da década, a Universidade da
+					Califórnia lançou o Berkeley Software Distribution (BSD), com a inclusão dos protocolos
+					TCP/IP. A Microsoft também entrou no mercado com a sua versão, o Xenix, assim como a Apple, l
+					com a A/UX e o macOS. Também foi lançado, em 1984, o X window system, um sistema de janelas,
+					que juntamente ao gerenciador de janelas Tab Window Manager (twm), proporcionou uma melhor
+					experiência gráfica ao usuário UNIX e outros sistemas operacionais baseados nele.
+				</h5>
+				<div class="wincontent__img-container">
+					<img src="./assets/2024-07-03 18.46.32 archive.org 40437b45f53e.png" alt="">
+				</div>
+				<h5> O que pode parecer um sucesso levou ao seu declínio nos anos 90,
+					junto a outros fatores. O aumento da quantidade de sistemas UNIX-like
+					levou à fragmentação do UNIX original e uma falta de padronização. As
+					melhorias do BSD e o surgimento do Linux tornaram o projeto original
+					uma opção menos atrativa, além da ascensão de sistemas proprietários,
+					que dominaram o mercado de software. Esses novos SOs também contavam
+					com suporte para as novas arquiteturas do mercado, como a x86, ao contrário
+					do UNIX, que não conseguiu acompanhar a velocidade das mudanças do hardware.
+				</h5>
+				<h5> Não se pode negar, porém, a sua contribuição para os sistemas operacionais
+					modernos: trouxe o conceito de shell, não apenas como linha de comando, mas
+					como uma linguagem própria; criou a separação entre o espaço do usuário e do
+					kernel, os sistemas e gerenciamento de arquivos; conceitos de ciclo de processos,
+					além do versionamento e documentação.
+				</h5>
+				<div class="wincontent__img-container">
+					<img src="./assets/Daemon-phk.svg.png" alt="">
+					<img src="./assets/Tux.svg.png" alt="">
+				</div>
+			</div>
 		</div>
 		<div class="window closed" data-title="Referências">
-			<h1>Referências</h1>
-
-			<h5>BHATT, P. C. P. UNIX: Genesis and design features. Resonance, v. 17, n. 8, p. 727–747, agosto de 2022.</h5>
-			<h5>RITCHIE, D. M. The Unix System: The Evolution of the UNIX Time-sharing System, v. 63, n. 8, p. 1577-1593, outubro de 1984.</h5>
-			<h5>QUERCIA, V; O’REILLY, T. X Window System User’s Guide: for X11, R3 and R4. 3ª ed, O'Reilly & Associates, 1990.</h5>
+			<div class="content-container">
+				<h1>Referências</h1>
+				<h5>BHATT, P. C. P. UNIX: Genesis and design features. Resonance, v. 17, n. 8, p. 727–747, agosto de
+					2022.</h5>
+				<h5>RITCHIE, D. M. The Unix System: The Evolution of the UNIX Time-sharing System, v. 63, n. 8, p.
+					1577-1593, outubro de 1984.</h5>
+				<h5>QUERCIA, V; O’REILLY, T. X Window System User’s Guide: for X11, R3 and R4. 3ª ed, O'Reilly &
+					Associates, 1990.</h5>
+			</div>
 		</div>
 		<div class="window closed" data-title="Terminal">
 			<div class="terminalCont">
 				<div id="terminalReslutsCont">
 				</div>
 				<form>
-				<input id="terminalTextInput" type="text" autocomplete="off">
+					<input id="terminalTextInput" type="text" autocomplete="off">
 				</form>
 			</div>
 			<script src="./script/terminal.js"></script>
-
 		</div>
 
 		<div id="taskbar">

@@ -76,17 +76,24 @@ function openMinimized(id) {
 }
 
 $(document).ready(function () {
+
 	$(".window").each(function () {      		// window template
 		$(this).css('z-index', 1000)
 		$(this).attr('data-id', i);
+
 		minimizedWidth[i] = $(this).width();
 		minimizedHeight[i] = $(this).height();
 		windowTopPos[i] = $(this).css("top");
 		windowLeftPos[i] = $(this).css("left");
-		$("#taskbar").append('<div class="taskbarPanel" id="minimPanel' + i + '" data-id="' + i + '">' + '<img class="taskbar__icon" src="./assets/txt.webp"/>' + '<span>' + $(this).attr("data-title") + '</span>' + '</div>');
+
+		var imagePath = $(this).attr("data-title") == "Terminal" ? "console_prompt.png" : "document_icon.png";
+
+		$("#taskbar").append('<div class="taskbarPanel" id="minimPanel' + i + '" data-id="' + i + '">' + '<img class="taskbar__icon" src="../assets/' + imagePath + '"/>' + '<span>' + $(this).attr("data-title") + '</span>' + '</div>');
 		if ($(this).hasClass("closed")) { $("#minimPanel" + i).addClass('closed'); }
+
 		$(this).attr('id', 'window' + (i++));
 		$(this).wrapInner('<div class="wincontent"></div>');
+
 		$(this).prepend('<div class="windowHeader"><strong>' + $(this).attr("data-title") + '</strong><span title="Minimize" class="winminimize"><span></span></span><span title="Maximize" class="winmaximize"><span></span><span></span></span><span title="Close" class="winclose">X</span></div>');
 	});
 

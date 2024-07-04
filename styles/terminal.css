@@ -1,134 +1,203 @@
 html {
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-   
-  body{
-    font-family: 'Roboto','Helvetica Neue', 'Lucida Grande', sans-serif;
-  }
-   
-  body, h1,h2,h3, p{
-      margin:0;
-      padding:0;
-  }
-   
-  .gradientCont{
-    background: linear-gradient(to right, #ff416c, #ff4b2b); 
-      width:100%;
-      height: 300px;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: content-box;
+}
+
+body {
+  font-family: 'Roboto', 'Helvetica Neue', 'Lucida Grande', sans-serif;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.gradientCont {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  width: 100%;
+  height: 300px;
+}
+
+.terminalCont {
+  min-width: 200px;
+  min-height: 140px;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Roboto Mono', monospace;
+  opacity: 0;
+
+  animation:
+    slideDownAnimation 0s ease-in-out 0s forwards,
+    fadeInAnimation 0.0s ease-in-out 0s forwards;
+}
+
+.userEnteredText {
+  color: rgb(72, 255, 0);
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+#terminalReslutsCont {
+  height: 100%;
+  padding: 12px;
+  margin-right: 5px;
+  overflow-y: auto;
+  resize: none;
+  border: none;
+  font-size: 14px;
+  line-height: 28px;
+  display: block;
+  color: rgb(102, 255, 0);
+}
+
+
+#terminalReslutsCont a {
+  color: rgb(72, 255, 0);
+  text-decoration: none;
+}
+
+#terminalReslutsCont a:hover {
+  text-decoration: underline;
+}
+
+#terminalTextInput {
+  background: black;
+  display: block;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  width: -webkit-fill-available;
+  color: rgb(43, 255, 0);
+  padding: 18px;
+  font-size: 14px;
+  outline: none;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.window[data-title="Terminal"] .wincontent {
+  padding: 0px;
+  margin: 0px;
+  border-radius: 0%;
+}
+
+#terminalReslutsCont::-webkit-scrollbar {
+  width: 1px; 
+}
+
+#terminalReslutsCont::-webkit-scrollbar-thumb {
+  background: #48ff00; 
+}
+
+@-webkit-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
   }
 
-  .terminalCont{
-      background: black;
-      width: 100%;
-    padding:12px 0 0 0;
-    margin-top: -20px;
-    font-family: 'Roboto Mono', monospace;
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeInAnimation {
+  0% {
     opacity: 0;
-   
-    animation:
-      slideDownAnimation 0s ease-in-out 0s forwards,
-      fadeInAnimation 0.0s ease-in-out 0s forwards;
   }
-   
-  .userEnteredText{
-    color: rgb(72, 255, 0);
-    margin: 0;
-    padding: 0;
-    display: inline-block;
+
+  100% {
+    opacity: 1;
   }
-   
-  #terminalReslutsCont{
-      width:100%;
-      height: 400px;
-      padding: 12px;
-      overflow-y: auto;
-      resize: none;
-      border: none;
-      font-size: 14px;
-    line-height: 28px;
-      display: block;
-      color: rgb(102, 255, 0);
+}
+
+@-o-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
   }
-   
-   
-  #terminalReslutsCont a{
-    color: rgb(72, 255, 0);
-    text-decoration: none;
+
+  100% {
+    opacity: 1;
   }
-   
-  #terminalReslutsCont a:hover{
-    text-decoration: underline;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
   }
-   
-  #terminalTextInput{
-      background: black;
-      display: block;
-      border: none;
-      border-top: 1px solid rgba(0, 0, 0, 0.2);
-      width: 100%;
-      color: rgb(43, 255, 0);
-      padding: 18px;
-      font-size: 14px;
-    outline: none;
-    font-family: 'Roboto Mono', monospace;
+
+  100% {
+    opacity: 1;
   }
-   
-  @-webkit-keyframes fadeInAnimation {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
+}
+
+@-webkit-keyframes slideDownAnimation {
+  0% {
+    margin-top: -20px;
   }
-  @-moz-keyframes fadeInAnimation {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
+
+  100% {
+    margin-top: 0;
   }
-  @-o-keyframes fadeInAnimation {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
+}
+
+@-moz-keyframes slideDownAnimation {
+  0% {
+    margin-top: -20px;
   }
-  @keyframes fadeInAnimation {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
+
+  100% {
+    margin-top: 0;
   }
-   
-  @-webkit-keyframes slideDownAnimation {
-    0%   { margin-top: -20px;}
-    100% { margin-top: 0;}
+}
+
+@-o-keyframes slideDownAnimation {
+  0% {
+    margin-top: -20px;
   }
-  @-moz-keyframes slideDownAnimation {
-    0%   { margin-top: -20px;}
-    100% { margin-top: 0;}
+
+  100% {
+    margin-top: 0;
   }
-  @-o-keyframes slideDownAnimation {
-    0%   { margin-top: -20px;}
-    100% { margin-top: 0;}
+}
+
+@keyframes slideDownAnimation {
+  0% {
+    margin-top: -20px;
   }
-  @keyframes slideDownAnimation {
-    0%   { margin-top: -20px;}
-    100% { margin-top: 0;}
+
+  100% {
+    margin-top: 0;
   }
-   
-  @media screen and (max-width: 1000px){
-    .gradientCont{
-      height: 220px;
-    }
-    .mainCont{
-      width: 100%;
-      padding: 0 12px;
-    }
-    .mainCont h2{
-      font-size: 32px;
-      margin: 40px 0 0 0;
-    }
-    .mainCont h3{
-      font-size: 16px;
-      margin: 0 0 40px 0;
-    }
-    #terminalReslutsCont{
-      height: 100px;
-    }
-   
+}
+
+@media screen and (max-width: 1000px) {
+  .gradientCont {
+    height: 220px;
   }
-  
+
+  .mainCont {
+    width: 100%;
+    padding: 0 12px;
+  }
+
+  .mainCont h2 {
+    font-size: 32px;
+    margin: 40px 0 0 0;
+  }
+
+  .mainCont h3 {
+    font-size: 16px;
+    margin: 0 0 40px 0;
+  }
+}
