@@ -10,19 +10,19 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('terminalTextInput').focus();
    
 	// Getting the text from the input
-	var textInputValue = document.getElementById('terminalTextInput').value.trim();
+	let textInputValue = document.getElementById('terminalTextInput').value.trim();
    
 	//Getting the text from the results div
-	var textResultsValue = document.getElementById('terminalReslutsCont').innerHTML;
+	let textResultsValue = document.getElementById('terminalReslutsCont').innerHTML;
    
 	// Clear text input
-	var clearInput = function(){
+	let clearInput = function(){
 	  document.getElementById('terminalTextInput').value = "";
 	}
    
 	// Scrtoll to the bottom of the results div
-	var scrollToBottomOfResults = function(){
-	  var terminalResultsDiv = document.getElementById('terminalReslutsCont');
+	let scrollToBottomOfResults = function(){
+	  let terminalResultsDiv = document.getElementById('terminalReslutsCont');
 	  terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
 	}
    
@@ -30,36 +30,38 @@ document.addEventListener('DOMContentLoaded', function() {
 	scrollToBottomOfResults();
    
 	// Add text to the results div
-	var addTextToResults = function(textToAdd){
+	let addTextToResults = function(textToAdd){
 	  document.getElementById('terminalReslutsCont').innerHTML += "<p>" + textToAdd + "</p>";
 	  scrollToBottomOfResults();
 	}
    
 	// Getting the list of keywords for help & posting it to the screen
-	var postHelpList = function(){
+	let postHelpList = function(){
 	  // Array of all the help keywords
-	  var helpKeyWords = [
-		"- Open + website URL to open it in the browser (ex. open discord.com)",
-		"- Google + keyword to search directly in Google (ex. google web development)",
-		"- YouTube + keyword to search directly in YouTube (ex. ProgrammingWithNiko)",
-		"- Wiki + keyword to search directly in Wikipedia (ex. wiki numbers)",
+	  let helpKeyWords = [
+		"- 'pwd' will show the current directory",
+		"- 'ls' will show all files in the directory",
+		"- 'cat' + file will show a file content",
+		"- 'tail' + file will show the last 10 words of a file ",
+		"- 'wc' + file will show the word count of a file",
 		"- 'Time' will display the current time.",
 		"- 'Date' will display the current date.",
-		"- 'tech' will make you expert by watching videos",
-		"* There are more keywords that you have to discover by yourself."
+		"- 'moo' will display a funny cow",
+		"- 'git-unix' will redirect to our github repository",
+		"- 'authors' will will display the authors of this website"
 	  ].join('<br>');
 	  addTextToResults(helpKeyWords);
 	}
    
 	// Getting the time and date and post it depending on what you request for
-	var getTimeAndDate = function(postTimeDay){
-	  var timeAndDate = new Date();
-	  var timeHours = timeAndDate.getHours();
-	  var timeMinutes = timeAndDate.getMinutes();
-	  var dateDay = timeAndDate.getDate();
+	let getTimeAndDate = function(postTimeDay){
+	  let timeAndDate = new Date();
+	  let timeHours = timeAndDate.getHours();
+	  let timeMinutes = timeAndDate.getMinutes();
+	  let dateDay = timeAndDate.getDate();
 	  console.log(dateDay);
-	  var dateMonth = timeAndDate.getMonth() + 1; // Because JS starts counting months from 0
-	  var dateYear = timeAndDate.getFullYear(); // Otherwise we'll get the count like 98,99,100,101...etc.
+	  let dateMonth = timeAndDate.getMonth() + 1; // Because JS starts counting months from 0
+	  let dateYear = timeAndDate.getFullYear(); // Otherwise we'll get the count like 98,99,100,101...etc.
    
 	  if (timeHours < 10){ // if 1 number display 0 before it.
 		timeHours = "0" + timeHours;
@@ -69,8 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		timeMinutes = "0" + timeMinutes;
 	  }
    
-	  var currentTime = timeHours + ":" + timeMinutes;
-	  var currentDate = dateDay + "/" + dateMonth + "/" + dateYear;
+	  let currentTime = timeHours + ":" + timeMinutes;
+	  let currentDate = dateDay + "/" + dateMonth + "/" + dateYear;
    
 	  if (postTimeDay == "time"){
 		addTextToResults(currentTime);
@@ -81,79 +83,122 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
    
 	// Opening links in a new window
-	var openLinkInNewWindow = function(linkToOpen){
+	let openLinkInNewWindow = function(linkToOpen){
 	  window.open(linkToOpen, '_blank');
 	  clearInput();
 	}
    
 	// Having a specific text reply to specific strings
-	var textReplies = function() {
+	let textReplies = function() {
 	  switch(textInputValueLowerCase){
 		// replies
-		case "code":
+		case "ls":
 		  clearInput();
-		  addTextToResults("Get web elements source code at <a target='_blank' href='</a>");
+		  addTextToResults("Historia-1");
+		  addTextToResults("Historia-2");
+		  addTextToResults("HIstoria-3");
+		  addTextToResults("HIstoria-4");
+		  addTextToResults("Terminal");
+		  addTextToResults("Lixeira");
+		  break;
+
+		case "moo":
+		  clearInput();
+		  addTextToResults(".(__)");
+		  addTextToResults(".(oo)");
+		  addTextToResults(".\xa0\\/------\\ ");
+		  addTextToResults(".\xa0\xa0||\xa0\xa0\xa0||\xa0\\");
+		  addTextToResults(".\xa0\xa0/\\\xa0\xa0\xa0/\\");
+		  addTextToResults(".\xa0 ~~\xa0\xa0\xa0~~");
+		  addTextToResults("...\"Have you mooed today?\"...");
 		  break;
    
-		case "founder":
+		case "cat surgimento":
 		  clearInput();
-		  addTextToResults("Niko and PWN Team are the founders");
+		  addTextToResults("Até meados dos anos 40, computadores não armazenavam instruções na memória, elas eram executadas a partir de cartões perfurados, painéis de comutação ou instruções fixadas pela organização de cabos e interruptores. Com a proposta de arquitetura de von Neumann na metade da década, novas perspectivas de programação foram surgindo, permitindo conceitos como o de programa armazenado e a capacidade do computador executar instruções de software armazenadas na memória de acesso aleatório (RAM, do inglês random access memory");
+		  addTextToResults("Com a popularização dos computadores de programa armazenado, o Massachusetts Institute of Technology (MIT), a American Telephone and Telegraph (AT&T) Bell Labs e General Eletric (GE) se reuniram para desenvolver um sistema operacional experimental, o MULTiplexed Information and Computing Services (MULTICS), para rodar em na máquina GE 645. Ele acabou não atraindo muitos consumidores, pela falta de recursos computacionais para atender ao que o software se propunha a fazer.");
+		  break;
+
+		  case "cat evolucao":
+			clearInput();
+			addTextToResults("Um novo projeto de sistema operacional foi elaborado por Thompson, Ritchie, McIlroy e Ossanna, o unics, escrito em asm e que visava oferecer ao usuário uma interface de linha de comando. Em 1969, o unics virou UNIX, mudança que marcou um período de grande colaboração entre Thompson e Ritchie, sendo o início do seu desenvolvimento para o PDP-7.");
+			addTextToResults('A primeira versão do UNIX foi lançada em 1971, para a máquina PDP-11. Boa parte do UNIX foi reescrita em 1973, em C, pela possibilidade fornecida por ela para abstrações de alto nível em paralelo a operações em nível de bit, similar a um assembler; para além da portabilidade, que possibilitou o seu uso em outras máquinas.');
+			addTextToResults('A distribuição gratuita do UNIX começou nas universidades em 1975, junto à criação de ferramentas para o rápido desenvolvimento de softwares por terceiros. Apenas três anos depois, em 1978, começou a ser distribuído o UNIX System V, uma versão comercial, com suporte técnico e manutenção.');
+			break;
+		
+		case "cat declinio":
+			clearInput();
+			addTextToResults("A partir dos anos 80, outros projetos envolvendo o UNIX começaram a ser lançados, em paralelo ao original e ao System V. Já no início da década, a Universidade da Califórnia lançou o Berkeley Software Distribution (BSD), com a inclusão dos protocolos TCP/IP. A Microsoft também entrou no mercado com a sua versão, o Xenix, assim como a Apple, com a A/UX e o macOS. Também foi lançado, em 1984, o X window system, um sistema de janelas, que juntamente ao gerenciador de janelas Tab Window Manager (twm), proporcionou uma melhor experiência gráfica ao usuário UNIX e outros sistemas operacionais baseados nele.");
+			addTextToResults('O que pode parecer um sucesso levou ao seu declínio nos anos 90, junto a outros fatores. O aumento da quantidade de sistemas UNIX-like levou à fragmentação do UNIX original e uma falta de padronização. As melhorias do BSD e o surgimento do Linux tornaram o projeto original uma opção menos atrativa, além da ascensão de sistemas proprietários, que dominaram o mercado de software. Esses novos SOs também contavam com suporte para as novas arquiteturas do mercado, como a x86, ao contrário do UNIX, que não conseguiu acompanhar a velocidade das mudanças do hardware.');
+			addTextToResults('Não se pode negar, porém, a sua contribuição para os sistemas operacionais modernos: trouxe o conceito de shell, não apenas como linha de comando, mas como uma linguagem própria; criou a separação entre o espaço do usuário e do kernel, os sistemas e gerenciamento de arquivos; conceitos de ciclo de processos, além do versionamento e documentação.');
+			break;
+
+		case "cat referencias":
+			clearInput();
+			addTextToResults("BHATT, P. C. P. UNIX: Genesis and design features. Resonance, v. 17, n. 8, p. 727–747, agosto de 2022.");
+			addTextToResults('RITCHIE, D. M. The Unix System: The Evolution of the UNIX Time-sharing System, v. 63, n. 8, p. 1577-1593, outubro de 1984.');
+			addTextToResults('QUERCIA, V; O’REILLY, T. X Window System User’s Guide: for X11, R3 and R4. 3ª ed, O\'Reilly & Associates, 1990.');
+			break;
+   
+		case "git-unix":
+		  clearInput();
+		  addTextToResults('veja nosso codigo no github!!');
+		  openLinkInNewWindow('https://github.com/Kaiki098/trabalho-so-unix');
 		  break;
    
-		case "i love you":
-		case "love you":
-		case "love":
+		case "tail surgimento":
 		  clearInput();
-		  addTextToResults("Aww! Love you too ❤");
+		  addTextToResults("para atender ao que o software se propunha a fazer.");
+		  break;
+
+		case "tail evolucao":
+		  clearInput();
+		  addTextToResults("System V, uma versão comercial, com suporte técnico e manutenção.");
+		  break;
+		  
+		case "tail declinio":
+		  clearInput();
+		  addTextToResults("conceitos de ciclo de processos, além do versionamento e documentação.");
+		  break;
+
+		case "tail referencia":
+		  clearInput();
+		  addTextToResults("X11, R3 and R4. 3ª ed, O\'Reilly & Associates, 1990.");
 		  break;
    
-		case "ProgrammingWithNiko":
-		case "PWN":
-		case "programming":
+		case "wc surgimento":
 		  clearInput();
-		  addTextToResults('Web development examples!');
-		  openLinkInNewWindow('https://www.youtube.com/channel/UCjJGyqNHgIOntnY_MDoXVZA?view_as=subscriber');
+		  addTextToResults("2 147 1003 tmp");
 		  break;
-   
-		case "hello":
-		case "hi":
-		case "hola":
+
+		case "wc evolucao":
 		  clearInput();
-		  addTextToResults("Hello, I am your assistant... I am based on pure JavaScript.");
+		  addTextToResults("3 162 958 tmp");
 		  break;
-   
-		case "what the":
-		case "wtf":
+
+		case "wc declinio":
 		  clearInput();
-		  addTextToResults("F***.");
+		  addTextToResults("3 255 1522 tmp");
 		  break;
-   
-		case "shit":
-		case "poop":
-		case "💩":
+
+		case "wc referencias":
 		  clearInput();
-		  addTextToResults("💩");
+		  addTextToResults("3 66 266 tmp");
 		  break;
-   
-   
+
+		case "pwd":
+		  clearInput();
+		  addTextToResults("/u/ma/user");
+		  break;
+
+		case "authors":
+		  clearInput();
+		  addTextToResults("Kaiki Alvarenga");
+		  addTextToResults("Helen Enes Dessa");
+		  addTextToResults("Maria Clara Batista");
+		  break;
    
 		// replies 
-   
-		case "youtube":
-		  clearInput();
-		  addTextToResults("Type youtube + something to search for.");
-		  break;
-   
-		case "google":
-		  clearInput();
-		  addTextToResults("Type google + something to search for.");
-		  break;
-   
-		  case "wiki":
-		  case "wikipedia":
-			clearInput();
-			addTextToResults("Type wiki + something to search for.");
-			break;  
    
 		case "time":
 		  clearInput();
@@ -179,27 +224,13 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
    
   // Main function to check the entered text and assign it to the correct function
-	var checkWord = function() {
-	  textInputValue = document.getElementById('terminalTextInput').value.trim(); //get the text from the text input to a variable
+	let checkWord = function() {
+	  textInputValue = document.getElementById('terminalTextInput').value.trim(); //get the text from the text input to a letiable
 	  textInputValueLowerCase = textInputValue.toLowerCase(); //get the lower case of the string
    
 	  if (textInputValue != ""){ //checking if text was entered
-		addTextToResults("<p class='userEnteredText'>> " + textInputValue + "</p>");
-		if (textInputValueLowerCase.substr(0,5) == "open ") { //if the first 5 characters = open + space
-		  openLinkInNewWindow('http://' + textInputValueLowerCase.substr(5));
-		  addTextToResults("<i>The URL " + "<b>" + textInputValue.substr(5) + "</b>" + " should be opened now.</i>");
-		} else if (textInputValueLowerCase.substr(0,8) == "youtube ") {
-		  openLinkInNewWindow('https://www.youtube.com/results?search_query=' + textInputValueLowerCase.substr(8));
-		  addTextToResults("<i>I've searched on YouTube for " + "<b>" + textInputValue.substr(8) + "</b>" + " it should be opened now.</i>");
-		} else if (textInputValueLowerCase.substr(0,7) == "google ") {
-		  openLinkInNewWindow('https://www.google.com/search?q=' + textInputValueLowerCase.substr(7));
-		  addTextToResults("<i>I've searched on Google for " + "<b>" + textInputValue.substr(7) + "</b>" + " it should be opened now.</i>");
-		} else if (textInputValueLowerCase.substr(0,5) == "wiki "){
-		  openLinkInNewWindow('https://wikipedia.org/w/index.php?search=' + textInputValueLowerCase.substr(5));
-		  addTextToResults("<i>I've searched on Wikipedia for " + "<b>" + textInputValue.substr(5) + "</b>" + " it should be opened now.</i>");
-		} else{
-		  textReplies();
-		}
+		addTextToResults("<p class='userEnteredText'> " + "# " + textInputValue + "</p>");
+		textReplies();
 	  }
 	};
    
