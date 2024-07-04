@@ -88,7 +88,7 @@ $(document).ready(function () {
 
 		var imagePath = $(this).attr("data-title") == "Terminal" ? "console_prompt.png" : "document_icon.png";
 
-		$("#taskbar").append('<div class="taskbarPanel" id="minimPanel' + i + '" data-id="' + i + '">' + '<img class="taskbar__icon" src="../assets/' + imagePath + '"/>' + '<span>' + $(this).attr("data-title") + '</span>' + '</div>');
+		$("#taskbar").append('<div class="taskbarPanel" id="minimPanel' + i + '" data-id="' + i + '">' + '<img class="taskbar__icon" src="./assets/' + imagePath + '"/>' + '<span>' + $(this).attr("data-title") + '</span>' + '</div>');
 		if ($(this).hasClass("closed")) { $("#minimPanel" + i).addClass('closed'); }
 
 		$(this).attr('id', 'window' + (i++));
