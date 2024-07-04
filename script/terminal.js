@@ -132,6 +132,13 @@ document.addEventListener('DOMContentLoaded', function() {
 			addTextToResults('O que pode parecer um sucesso levou ao seu declínio nos anos 90, junto a outros fatores. O aumento da quantidade de sistemas UNIX-like levou à fragmentação do UNIX original e uma falta de padronização. As melhorias do BSD e o surgimento do Linux tornaram o projeto original uma opção menos atrativa, além da ascensão de sistemas proprietários, que dominaram o mercado de software. Esses novos SOs também contavam com suporte para as novas arquiteturas do mercado, como a x86, ao contrário do UNIX, que não conseguiu acompanhar a velocidade das mudanças do hardware.');
 			addTextToResults('Não se pode negar, porém, a sua contribuição para os sistemas operacionais modernos: trouxe o conceito de shell, não apenas como linha de comando, mas como uma linguagem própria; criou a separação entre o espaço do usuário e do kernel, os sistemas e gerenciamento de arquivos; conceitos de ciclo de processos, além do versionamento e documentação.');
 			break;
+
+		case "cat referencias":
+			clearInput();
+			addTextToResults("BHATT, P. C. P. UNIX: Genesis and design features. Resonance, v. 17, n. 8, p. 727–747, agosto de 2022.");
+			addTextToResults('RITCHIE, D. M. The Unix System: The Evolution of the UNIX Time-sharing System, v. 63, n. 8, p. 1577-1593, outubro de 1984.');
+			addTextToResults('QUERCIA, V; O’REILLY, T. X Window System User’s Guide: for X11, R3 and R4. 3ª ed, O\'Reilly & Associates, 1990.');
+			break;
    
 		case "git-unix":
 		  clearInput();
@@ -153,6 +160,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		  clearInput();
 		  addTextToResults("conceitos de ciclo de processos, além do versionamento e documentação.");
 		  break;
+
+		case "tail referencia":
+		  clearInput();
+		  addTextToResults("X11, R3 and R4. 3ª ed, O\'Reilly & Associates, 1990.");
+		  break;
    
 		case "wc surgimento":
 		  clearInput();
@@ -169,6 +181,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		  addTextToResults("3 255 1522 tmp");
 		  break;
 
+		case "wc referencias":
+		  clearInput();
+		  addTextToResults("3 66 266 tmp");
+		  break;
+
 		case "pwd":
 		  clearInput();
 		  addTextToResults("/u/ma/user");
@@ -180,8 +197,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		  addTextToResults("Helen Enes Dessa");
 		  addTextToResults("Maria Clara Batista");
 		  break;
-   
-   
    
 		// replies 
    
