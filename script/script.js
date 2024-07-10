@@ -1,15 +1,3 @@
-/*################################################################################
-##################################################################################
-##########                                                             ###########
-##########                                                             ###########
-##########        Windows Template by                                  ###########
-##########            https://html5-templates.com/                      ###########
-##########                                                             ###########
-##########        All rights reserved.                                 ###########
-##########                                                             ###########
-##################################################################################
-################################################################################*/
-
 var i = 0,
 	minimizedWidth = new Array,
 	minimizedHeight = new Array,
@@ -17,6 +5,38 @@ var i = 0,
 	windowLeftPos = new Array,
 	panel,
 	id;
+
+$(function() {
+	// Torna os ícones arrastáveis
+    $(".openWindow").draggable({
+        start: function(event, ui) {
+			$(this).addClass("dragging"); 
+			$(this).css("opacity", 0.7);
+		},
+		stop: function(event, ui) {
+			$(this).removeClass("dragging");
+			$(this).css("opacity", 1);
+		}
+    });
+
+    // Torna a lixeira um alvo 'droppable'
+    $("#lixeira").droppable({
+        accept: ".openWindow", // Aceita apenas elementos com a classe 'openWindow'
+        hoverClass: "lixeira-hover", // Classe CSS aplicada quando um ícone é arrastado sobre a lixeira
+        drop: function(event, ui) {
+            // Seleciona o contêiner correto para mover o elemento arrastado
+            var lixeiraContainer = $('.window[data-title="Lixeira"] .content-container');
+
+            // Move o ícone para o contêiner da lixeira
+            lixeiraContainer.append(ui.draggable);
+
+            // Ajusta o estilo do ícone para se encaixar dentro da lixeira
+            ui.draggable.css({
+                position: "static"
+            });
+		}
+    });
+});
 
 function adjustFullScreenSize() {
 	$(".fullSizeWindow .wincontent").css("width", (window.innerWidth - 32));
@@ -86,7 +106,14 @@ $(document).ready(function () {
 		windowTopPos[i] = $(this).css("top");
 		windowLeftPos[i] = $(this).css("left");
 
-		var imagePath = $(this).attr("data-title") == "Terminal" ? "console_prompt.png" : "document_icon.png";
+		var imageMap = {
+		  "Terminal": "terminal.png",
+		  "Lixeira": "lixeira.png"
+		};
+		
+		var title = $(this).attr("data-title");
+		
+		var imagePath = imageMap[title] || "document.png"; 
 
 		$("#taskbar").append('<div class="taskbarPanel" id="minimPanel' + i + '" data-id="' + i + '">' + '<img class="taskbar__icon" src="./assets/' + imagePath + '"/>' + '<span>' + $(this).attr("data-title") + '</span>' + '</div>');
 		if ($(this).hasClass("closed")) { $("#minimPanel" + i).addClass('closed'); }

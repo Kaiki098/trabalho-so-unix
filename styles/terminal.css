@@ -70,6 +70,10 @@ p {
   text-decoration: none;
 }
 
+#terminalReslutsCont p {
+  text-indent: 0;
+}
+
 #terminalReslutsCont a:hover {
   text-decoration: underline;
 }
